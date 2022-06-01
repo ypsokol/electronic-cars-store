@@ -1,0 +1,121 @@
+@import "../variables";
+
+.popular {
+  &__container {
+    padding-top: 1rem;
+
+    @include lg-screen {
+      width: 875px;
+      padding-top: 3rem;
+    }
+  }
+
+  &__swiper {
+    @include lg-screen {
+      max-width: $xl;
+    }
+  }
+
+  &__card {
+    position: relative;
+    width: 238px;
+    background-color: $container-color;
+    border-radius: 1rem;
+    padding: 2rem 1.5rem 1.5rem;
+    margin-bottom: 3.5rem;
+    overflow: hidden;
+
+    &:first-child {
+      margin-left: 20px;
+    }
+
+    &:last-child {
+      margin-right: 20px;
+
+      @include lg-screen {
+        margin-right: 40px;
+      }
+    }
+
+    @include lg-screen {
+      width: 258px;
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+    }
+
+    & .shape__smaller {
+      position: absolute;
+      top: -2.5rem;
+      left: -2.5rem;
+    }
+  }
+
+  &__title,
+  &__subtitle,
+  &__image {
+    position: relative;
+  }
+
+  &__title {
+    font-size: $h2-font-size;
+    margin-bottom: 0.25rem;
+  }
+
+  &__subtitle {
+    font-size: $normal-font-size;
+    color: $text-color;
+    font-weight: 400;
+  }
+
+  &__img {
+    width: 160px;
+    margin: 0.75rem 0 1.25rem 1.5rem;
+    transition: 0.3s;
+
+    @include lg-screen {
+      width: 180px;
+      margin: 0.75rem 0 1.25rem 2rem;
+    }
+  }
+
+  &__data {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 0.5rem 1.25rem;
+    margin-bottom: 2rem;
+
+    &-group {
+      display: inline-flex;
+      align-items: center;
+      column-gap: 0.5rem;
+      font-size: $smaller-font-size;
+      color: $white-color;
+
+      &-icon {
+        font-size: 1rem;
+      }
+    }
+  }
+  &__price {
+    font-size: $h3-font-size;
+  }
+
+  &__button {
+    border: none;
+    outline: none;
+    padding: 0.75rem 1rem;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-radius: 1rem 0 1rem 0;
+    cursor: pointer;
+
+    &-icon {
+      font-size: 1.25rem;
+    }
+  }
+
+  &__card:hover &__img {
+    transform: translateY(-0.25rem);
+  }
+}

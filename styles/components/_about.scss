@@ -1,0 +1,93 @@
+@import "../variables";
+
+.about {
+  &__container {
+    row-gap: 6rem;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+
+    @include md-screen {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include lg-screen {
+      column-gap: 6rem;
+      align-items: center;
+    }
+  }
+
+  &__group {
+    position: relative;
+
+    @include xs-screen {
+      width: 350px;
+      justify-self: center;
+    }
+
+    @include lg-screen {
+      width: 480px;
+    }
+  }
+
+  &__img {
+    width: 310px;
+
+    @include lg-screen {
+      width: 480px;
+    }
+
+    & img {
+      border-radius: 0.5rem;
+    }
+  }
+
+  &__card {
+    width: 180px;
+    position: absolute;
+    right: 0;
+    bottom: -2.5rem;
+    background-color: hsla(0, 0%, 100%, 0.1);
+    backdrop-filter: blur(16px);
+    padding: 1rem 0.75rem;
+    text-align: center;
+    border-radius: 1.25rem;
+
+    @include lg-screen {
+      width: 198px;
+      padding: 1rem 1.25rem;
+    }
+
+    &-title {
+      font-size: $h3-font-size;
+      margin-bottom: 0.5rem;
+    }
+
+    &-description {
+      font-size: $smaller-font-size;
+
+      @include lg-screen {
+        //padding-right: 4rem;
+        //padding-bottom: 3rem;
+      }
+    }
+  }
+
+  &__data {
+    padding-top: 3rem;
+
+    @include md-screen {
+      padding-top: 0;
+      padding-left: 3rem;
+    }
+  }
+
+  &__title {
+    text-align: initial;
+    margin-bottom: 2rem;
+  }
+
+  &__description {
+    margin-bottom: 2rem;
+  }
+}

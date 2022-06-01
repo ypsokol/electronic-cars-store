@@ -1,9 +1,27 @@
+@import "mixins";
+@import "variables";
+@import "components";
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  scroll-behavior: smooth;
+  font-family: $body-font;
+  font-size: $normal-font-size;
+  background-color: $body-color;
+  color: $text-color;
+}
+
+h1,
+h2,
+h3 {
+  color: $title-color;
+  font-weight: $font-bold;
+}
+
+ul {
+  list-style: none;
 }
 
 a {
@@ -11,6 +29,143 @@ a {
   text-decoration: none;
 }
 
+img {
+  width: 100%;
+  height: auto;
+}
+
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+// Defaults
+/* Reusable CSS Classes*/
+.container {
+  max-width: $lg;
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+
+  @include lg-screen {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding: 4.5rem 0 2rem;
+
+  @include md-screen {
+    padding: 7rem 0 2rem;
+  }
+
+  &__title {
+    font-size: $h2-font-size;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+}
+
+.main {
+  overflow: hidden;
+}
+
+.shape {
+  background-color: hsla(219, 33%, 32%, 0.5);
+  filter: blur(112px);
+  border-radius: 50%;
+
+  &__big {
+    width: 400px;
+    height: 400px;
+
+    @include lg-screen {
+      width: 500px;
+      height: 500px;
+    }
+  }
+
+  &__small {
+    width: 300px;
+    height: 300px;
+
+    @include lg-screen {
+      width: 400px;
+      height: 400px;
+    }
+  }
+
+  &__smaller {
+    width: 180px;
+    height: 180px;
+    filter: blur(64px);
+  }
+}
+
+@keyframes button {
+  0% {
+    box-shadow: 0 0 12px hsl(158, 98%, 43%);
+  }
+  50% {
+    box-shadow: 0 0 24px hsl(158, 98%, 43%);
+  }
+  100% {
+    box-shadow: 0 0 12px hsl(158, 98%, 43%);
+  }
+}
+
+.button {
+  display: inline-block;
+  background-color: $primary-color;
+  color: $white-color;
+  padding: 1rem 2rem;
+  border-radius: 0.25rem;
+  font-size: $normal-font-size;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: $primary-color-alt;
+  }
+}
+
+// -------------------------- Breakpoints -------------------------------------
+
+// Small Devices
+@media screen and (max-width: 320px) {
+  .container {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .home {
+    &__car {
+      column-gap: 2rem;
+    }
+  }
+  .about {
+    &__card {
+      width: 150px;
+    }
+  }
+
+  .offer {
+    &__container {
+      grid-template-rows: max-content 180px;
+    }
+    &__img {
+      width: 340px;
+    }
+  }
+
+  .logos {
+    &__container {
+      gap: 2.5rem;
+    }
+  }
 }

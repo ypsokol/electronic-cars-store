@@ -1,0 +1,134 @@
+@import "/styles/variables";
+@import "/styles/mixins/media";
+
+.header {
+  width: 100%;
+  background-color: transparent;
+  backdrop-filter: blur(20px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $z-fixed;
+}
+
+.nav {
+  height: $header-height;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include md-screen {
+    height: calc(#{$header-height} + 1rem);
+  }
+
+  &__logo,
+  &__toggle {
+    color: $title-color;
+    display: inline-flex;
+  }
+
+  &__logo {
+    align-items: center;
+    column-gap: 0.25rem;
+    font-weight: $font-medium;
+    transition: 0.3s;
+    font-size: 1.25rem;
+
+    &-icon {
+      font-size: 1.25rem;
+    }
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  &__toggle {
+    font-size: 1.25rem;
+    cursor: pointer;
+
+    @include md-screen {
+      display: none;
+    }
+  }
+
+  &__menu {
+    display: inline;
+    position: fixed;
+    //background-color: white;
+    top: 0;
+    right: -100%;
+    //transform: translateX(100%);
+    width: 100%;
+    height: 100%;
+    //backdrop-filter: blur(96px);
+    transition: 0.3s;
+    z-index: 1000;
+
+    @include md-screen {
+      position: inherit;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      row-gap: 3rem;
+      padding-top: 9rem;
+      background-color: $primary-color;
+      height: 100vh;
+
+      @include md-screen {
+        flex-direction: row;
+        justify-content: flex-end;
+        column-gap: 3rem;
+        padding-top: 0;
+        height: 100%;
+        background-color: transparent;
+      }
+    }
+
+    &-item {
+      @include md-screen {
+        display: flex;
+        text-align: center;
+        align-items: center;
+      }
+    }
+
+    &-link {
+      text-transform: uppercase;
+      color: $title-color;
+      font-size: $h2-font-size;
+      font-weight: $font-medium;
+      transition: 0.3s;
+
+      @include md-screen {
+        font-size: 1.15rem;
+        text-transform: initial;
+      }
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+
+  &__show-menu {
+    right: 0;
+    transition: 0.3s;
+    //transform: translateX(0);
+  }
+
+  &__close {
+    font-size: 2rem;
+    color: $white-color;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    cursor: pointer;
+
+    @include md-screen {
+      display: none;
+    }
+  }
+}

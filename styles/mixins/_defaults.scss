@@ -1,0 +1,28 @@
+@import "../mixins/media";
+@import "../variables/fonts";
+
+/* Reusable CSS Classes*/
+@mixin container {
+  max-width: $lg;
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+@mixin grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@mixin section {
+  padding: 4.5rem 0 2rem;
+
+  &__title {
+    font-size: $h2-font-size;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+}
+
+@mixin main {
+  overflow: hidden;
+}

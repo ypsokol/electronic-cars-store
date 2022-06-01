@@ -1,0 +1,122 @@
+@import "../variables";
+
+.footer {
+  position: relative;
+  overflow: hidden;
+
+  & .shape__big,
+  .shape__small {
+    position: absolute;
+  }
+
+  & .shape {
+    &__big {
+      width: 300px;
+      height: 300px;
+      left: -12rem;
+      top: 6rem;
+    }
+
+    &__small {
+      right: -13rem;
+      bottom: -6rem;
+    }
+  }
+
+  &__container {
+    row-gap: 2.5rem;
+    position: relative;
+
+    @include md-screen {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include lg-screen {
+      grid-template-columns: repeat(4, max-content);
+      justify-content: space-between;
+    }
+  }
+
+  &__logo {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 0.25rem;
+    color: $title-color;
+    font-size: $h2-font-size;
+    font-weight: $font-bold;
+    margin-bottom: 1.25rem;
+    transition: 0.3s;
+
+    @include lg-screen {
+      column-gap: 0.5rem;
+    }
+
+    &-icon {
+      font-size: 1.5rem;
+      font-weight: 500;
+
+      @include lg-screen {
+        font-size: 2rem;
+      }
+    }
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+  &__title {
+    font-size: $h3-font-size;
+    margin-bottom: 1.25rem;
+
+    @include lg-screen {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+
+    @include lg-screen {
+      row-gap: 0.75rem;
+    }
+  }
+
+  &__link,
+  &__social-link {
+    color: $text-color;
+    transition: 0.3s;
+  }
+
+  &__link:hover,
+  &__social-link:hover {
+    color: $title-color;
+  }
+
+  &__social {
+    display: flex;
+    column-gap: 1.5rem;
+
+    &-link {
+      font-size: 1.25rem;
+
+      @include lg-screen {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  &__copy {
+    display: block;
+    margin-top: 4rem;
+    text-align: center;
+    font-size: $smaller-font-size;
+    color: $text-color-light;
+
+    @include lg-screen {
+      margin-top: 8rem;
+      padding-bottom: 1rem;
+    }
+  }
+}

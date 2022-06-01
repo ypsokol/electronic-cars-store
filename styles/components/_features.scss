@@ -1,0 +1,110 @@
+@import "../variables";
+
+.features {
+  overflow: hidden;
+  position: relative;
+
+  &__container {
+    padding-top: 2rem;
+    grid-template-columns: 285px;
+    justify-content: center;
+
+    @include sm-screen {
+      grid-template-columns: repeat(2, 228px);
+    }
+
+    @include lg-screen {
+      padding: 2rem 0 3rem;
+    }
+  }
+
+  &__group {
+    display: grid;
+    position: relative;
+    z-index: 10;
+  }
+
+  &__img {
+    width: 150px;
+    justify-self: center;
+    z-index: 1;
+
+    @include lg-screen {
+      width: 200px;
+    }
+  }
+
+  &__card {
+    width: 112px;
+    background-color: hsla(0, 0%, 100%, 0.1);
+    backdrop-filter: blur(16px);
+    border-radius: 1.25rem;
+    padding: 0.75rem 2rem;
+    text-align: center;
+    color: $title-color;
+    position: absolute;
+    z-index: 2;
+
+    @include lg-screen {
+      width: 127px;
+      padding: 0.75rem 2.5rem;
+    }
+
+    &-1 {
+      top: 4rem;
+      left: 1.5rem;
+
+      @include lg-screen {
+        left: -1rem;
+      }
+    }
+
+    &-2 {
+      top: 8rem;
+      right: 1rem;
+
+      @include lg-screen {
+        right: -2.5rem;
+      }
+    }
+
+    &-3 {
+      left: 1.5rem;
+      bottom: 2rem;
+
+      @include lg-screen {
+        bottom: 7rem;
+        left: -1rem;
+      }
+    }
+
+    &-title {
+      font-size: $h3-font-size;
+      margin-bottom: 0.25rem;
+    }
+
+    &-description {
+      font-size: $smaller-font-size;
+    }
+  }
+
+  &__map {
+    max-width: initial;
+    width: 450px;
+    position: absolute;
+    top: 8rem;
+    left: -3rem;
+    margin: auto;
+    transform: rotate(-22deg);
+
+    @include sm-screen {
+      left: 0;
+      right: 0;
+    }
+
+    @include lg-screen {
+      width: 650px;
+      //top: 11rem;
+    }
+  }
+}

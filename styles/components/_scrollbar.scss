@@ -1,0 +1,14 @@
+::-webkit-scrollbar {
+  width: 0.6rem;
+  background-color: hsl(219, 4%, 16%);
+  border-radius: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(219, 4%, 42%);
+  border-radius: 1rem;
+
+  &:hover {
+    background-color: hsl(219, 4%, 54%);
+  }
+}

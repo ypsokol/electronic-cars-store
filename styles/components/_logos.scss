@@ -1,0 +1,33 @@
+@import "../variables";
+
+.logos {
+  &__img {
+    width: 40px;
+    opacity: 0.4;
+    transition: 0.3s;
+
+    @include lg-screen {
+      width: 50px;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__container {
+    grid-template-columns: repeat(3, max-content);
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    padding-bottom: 2rem;
+
+    @include md-screen {
+      gap: 4rem 8rem;
+    }
+
+    @include lg-screen {
+      grid-template-columns: repeat(6, max-content);
+    }
+  }
+}
