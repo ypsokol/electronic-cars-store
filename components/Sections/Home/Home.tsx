@@ -25,8 +25,13 @@ const HomeSection = () => {
             Electric car
           </h3>
         </div>
-
-        <Image src={home} alt="" className="home__img" />
+        <Image
+          src={home}
+          alt=""
+          className="home__img"
+          priority
+          placeholder="blur"
+        />
 
         <div className="home__car">
           <Item title="24*" description="TEMPERATURE">
@@ -40,6 +45,17 @@ const HomeSection = () => {
           <Item title="94%" description="Battery">
             <RiFlashlightFill />
           </Item>
+
+          <Item title="94%" description="Battery">
+            <RiFlashlightFill />
+          </Item>
+        </div>
+        <div className="home__description">
+          <span className="home__description-text">
+            A sports car that covers over 300 miles with superb performance—but
+            without a drop of gasoline? Welcome to the future: the Mission E
+            electric concept car.
+          </span>
         </div>
         <a href={`#${Sections.about}`} className="home__button">
           Start

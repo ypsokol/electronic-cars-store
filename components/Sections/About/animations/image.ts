@@ -8,7 +8,6 @@ export const imageVariant: Variants = {
     x: 0,
     transition: {
       type: "spring",
-      bounce: 0.4,
       duration: 1.2,
     },
   },
