@@ -39,7 +39,7 @@
     background-color: hsla(0, 0%, 100%, 0.1);
     backdrop-filter: blur(16px);
     border-radius: 1.25rem;
-    padding: 0.75rem 2rem;
+    padding: 0.75rem 2.2rem;
     text-align: center;
     color: $title-color;
     position: absolute;
@@ -50,21 +50,37 @@
       padding: 0.75rem 2.5rem;
     }
 
+    $sm-layout: 20%;
+    $md-layout: 32%;
+    $lg-layout: 30%;
+
     &-1 {
       top: 4rem;
-      left: 1.5rem;
+      left: 5%;
 
+      @include sm-screen {
+        left: $sm-layout;
+      }
+      @include md-screen {
+        left: $md-layout;
+      }
       @include lg-screen {
-        left: -1rem;
+        left: $lg-layout;
       }
     }
 
     &-2 {
-      top: 8rem;
+      top: 45%;
       right: 1rem;
 
+      @include sm-screen {
+        right: $sm-layout;
+      }
+      @include md-screen {
+        right: $md-layout;
+      }
       @include lg-screen {
-        right: -2.5rem;
+        right: $lg-layout;
       }
     }
 
@@ -72,9 +88,14 @@
       left: 1.5rem;
       bottom: 2rem;
 
+      @include sm-screen {
+        left: $sm-layout;
+      }
+      @include md-screen {
+        left: $md-layout;
+      }
       @include lg-screen {
-        bottom: 7rem;
-        left: -1rem;
+        left: $lg-layout;
       }
     }
 
@@ -90,9 +111,8 @@
 
   &__map {
     max-width: initial;
-    width: 450px;
     position: absolute;
-    top: 8rem;
+    top: 5rem;
     left: -3rem;
     margin: auto;
     transform: rotate(-22deg);
@@ -104,7 +124,6 @@
 
     @include lg-screen {
       width: 650px;
-      //top: 11rem;
     }
   }
 }

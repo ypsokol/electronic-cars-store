@@ -13,13 +13,9 @@ const Features = () => {
         <div className="features__group">
           <Image src={features} alt="" className="features__img" />
           <Image className="features__map" alt="" src={map} />
-          <Card
-            title="800v"
-            description="Turbo <br> Chargin</p>"
-            position={1}
-          />
-          <Card title="350" description={`Km <br> Range`} position={2} />
-          <Card title="480" description="Km <br> Travel" position={3} />
+          <Card title="800v" description="Turbo Charging" position={1} />
+          <Card title="350" description={`Km Range`} position={2} />
+          <Card title="480" description="Km Travel" position={3} />
         </div>
       </div>
     </section>
