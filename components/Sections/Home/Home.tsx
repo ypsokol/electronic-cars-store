@@ -4,7 +4,7 @@ import {
   RiTempColdLine,
 } from "react-icons/ri";
 
-import Image from "next/image";
+import Image from "../../UI/Image";
 import Item from "./Item";
 
 import home from "../../../public/assets/images/home.webp";
@@ -25,9 +25,8 @@ const HomeSection = () => {
             Electric car
           </h3>
         </div>
-        <div className="home__img">
-          <Image src={home} alt="" />
-        </div>
+
+        <Image src={home} alt="" className="home__img" />
 
         <div className="home__car">
           <Item title="24*" description="TEMPERATURE">
