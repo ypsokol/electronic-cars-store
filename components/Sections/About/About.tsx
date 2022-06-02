@@ -1,4 +1,8 @@
-import Image from "next/image";
+import { motion } from "framer-motion";
+
+import { cardVariant } from "./animations/card";
+import { imageVariant } from "./animations/image";
+import Image from "../../UI/Image";
 
 import about from "/public/assets/images/about.webp";
 
@@ -7,16 +11,28 @@ const About = () => {
     <section className="about section" id="about">
       <div className="about__container container grid">
         <div className="about__group">
-          <div className="about__img">
-            <Image src={about} alt="" />
-          </div>
-          <div className="about__card">
+          <motion.div
+            initial="offscreen"
+            whileInView="onscreen"
+            variants={imageVariant}
+            viewport={{ once: true }}
+          >
+            <Image src={about} alt="" className="about__img" />
+          </motion.div>
+
+          <motion.div
+            initial="offscreen"
+            whileInView="onscreen"
+            variants={cardVariant}
+            className="about__card"
+          >
             <h3 className="about__cart-title">2.500+</h3>
             <p className="about__card-description">
               Supercharges placed along popular routes
             </p>
-          </div>
+          </motion.div>
         </div>
+
         <div className="about__data">
           <h2 className="section__title about__title">
             Machine with <br /> Future Technology

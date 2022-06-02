@@ -1,4 +1,3 @@
-import useInViewAnimation from "../../../utils/hooks/useInViewAnimation";
 import { motion } from "framer-motion";
 import { cardVariants } from "./animations/card";
 
@@ -11,17 +10,13 @@ const Card = ({
   description: string;
   position: number;
 }) => {
-  const { control, ref } = useInViewAnimation();
-
   const direction = position === 1 || position === 3 ? "left" : "right";
 
   return (
     <motion.div
-      ref={ref}
       initial="offscreen"
       whileInView="onscreen"
       variants={cardVariants(direction)}
-      animate={control}
       className={`features__card features__card-${position}`}
     >
       <h3 className="features__card-title">{title}</h3>
