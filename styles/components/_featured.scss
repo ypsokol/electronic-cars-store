@@ -72,6 +72,10 @@
     row-gap: 2.5rem;
     justify-content: center;
 
+    @include sm-screen {
+      grid-template-columns: repeat(2, 228px);
+    }
+
     @include lg-screen {
       grid-template-columns: repeat(3, 248px);
       gap: 4rem;
