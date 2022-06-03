@@ -1,5 +1,6 @@
 import {
   RiDashboard3Line,
+  RiFireLine,
   RiFlashlightFill,
   RiTempColdLine,
 } from "react-icons/ri";
@@ -46,8 +47,8 @@ const HomeSection = () => {
             <RiFlashlightFill />
           </Item>
 
-          <Item title="94%" description="Battery">
-            <RiFlashlightFill />
+          <Item title="600" description="Horsepower">
+            <RiFireLine />
           </Item>
         </div>
         <div className="home__description">
